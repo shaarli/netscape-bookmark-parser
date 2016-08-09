@@ -1,10 +1,13 @@
 # netscape-bookmark-parser
-[![license](https://img.shields.io/github/license/kafene/netscape-bookmark-parser.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/travis/shaarli/netscape-bookmark-parser.svg?style=flat-square&label=master)](https://travis-ci.org/shaarli/netscape-bookmark-parser)
+[![](https://img.shields.io/github/release/shaarli/netscape-bookmark-parser.svg?style=flat-square)](https://github.com/shaarli/netscape-bookmark-parser/releases/latest/)
+[![license](https://img.shields.io/github/license/shaarli/netscape-bookmark-parser.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 
 ## About
 This library provides a generic `NetscapeBookmarkParser` class that is able
-of parsing Netscape bookmark export files.
+of parsing Netscape bookmarks as exported by common Web browsers and
+bookmarking services.
 
 The motivations behind developing this parser are the following:
 - the [Netscape format](https://msdn.microsoft.com/en-us/library/aa753582%28v=vs.85%29.aspx)
@@ -25,6 +28,14 @@ How it works:
       UNIX epochs vs. human-readable dates, newlines & carriage returns, etc.
 - an associative array containing all successfully parsed links with their
   attributes is returned
+
+### Shaarli community fork
+This friendly fork is maintained by the Shaarli community at
+https://github.com/shaarli/netscape-bookmark-parser and is used by the
+open-source [Shaarli](https://github.com/shaarli/Shaarli) bookmarking service.
+This is a community fork of the original
+[netscape-bookmark-parser](https://github.com/kafene/netscape-bookmark-parser)
+project by [Kafene](http://kafene.org/).
 
 ## Example
 Script:

@@ -1,8 +1,8 @@
 {
-    "name": "kafene/netscape-bookmark-parser",
+    "name": "shaarli/netscape-bookmark-parser",
     "description": "Generic Netscape bookmark parser",
     "license": "MIT",
-    "homepage": "https://github.com/kafene/netscape-bookmark-parser",
+    "homepage": "https://github.com/shaarli/netscape-bookmark-parser",
     "authors": [
         {
             "name": "Kafene",
