@@ -4,7 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [v2.0.0](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v2.0.0) - UNPUBLISHED
+## [v2.x.y](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v2.x.y) - UNPUBLISHED
+
+## [v2.0.0](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v2.0.0) - 2017-02-19
+### Added
+- Log import into a log file
 
 ## [v1.1.1](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v1.1.1) - 2017-02-15
 ### Added
