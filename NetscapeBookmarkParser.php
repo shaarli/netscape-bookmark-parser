@@ -33,11 +33,13 @@ class NetscapeBookmarkParser implements LoggerAwareInterface
      * @param mixed  $defaultPub     Link publication status if missing
      *                               - '1' => public
      *                               - '0' => private)
+     * @param string $logDir         Log directory
      */
     public function __construct(
         $keepNestedTags=true,
         $defaultTags=array(),
-        $defaultPub='0'
+        $defaultPub='0',
+        $logDir=null
     )
     {
         if ($keepNestedTags) {
@@ -51,7 +53,7 @@ class NetscapeBookmarkParser implements LoggerAwareInterface
         $this->defaultPub = $defaultPub;
 
         $this->setLogger(new Logger(
-            __DIR__ . '/logs/',
+            $logDir == null ? __DIR__ . '/logs/' : $logDir,
             LogLevel::INFO,
             array(
                 'prefix' => 'import.',
