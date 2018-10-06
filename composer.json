@@ -17,7 +17,7 @@
             "role": "Developer"
         }
     ],
-    "keywords": ["bookmark", "link", "netscape", "parse"],
+    "keywords": ["bookmark", "link", "netscape", "parser"],
     "autoload": {"files": ["NetscapeBookmarkParser.php"]},
     "autoload-dev": {
         "psr-4": {

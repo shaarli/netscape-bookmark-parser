@@ -4,12 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [v2.1.0](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v2.1.0) - UNPUBLISHED
+## [v2.1.0](https://github.com/shaarli/netscape-bookmark-parser/releases/tag/v2.1.0) - 2018-10-06
 ### Added
 - Add PHP 7.1 and 7.2 to the Travis test environments
+- Add support for microsecond timestamps
 
 ### Changed
 - Update test dependencies
+- Update regexes to PCRE2 for PHP 7.3
 
 ### Removed
 - Drop support for PHP 5.3.x, 5.4.x and 5.5.x
