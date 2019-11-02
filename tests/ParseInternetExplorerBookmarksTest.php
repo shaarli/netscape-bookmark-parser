@@ -7,14 +7,14 @@ namespace Shaarli\NetscapeBookmarkParser;
  *
  * The reference data has been dumped with IE 11
  */
-class ParseInternetExplorerBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseInternetExplorerBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     protected $parser = null;
 
     /**
      * Initialize test resources
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $this->parser = new NetscapeBookmarkParser(true, array(), 'error');
     }
@@ -22,7 +22,7 @@ class ParseInternetExplorerBookmarksTest extends \PHPUnit_Framework_TestCase
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

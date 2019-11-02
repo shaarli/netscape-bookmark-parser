@@ -7,12 +7,12 @@ namespace Shaarli\NetscapeBookmarkParser;
  *
  * @see http://delicious.com/
  */
-class ParseDeliciousBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseDeliciousBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

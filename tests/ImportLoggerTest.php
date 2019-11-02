@@ -10,7 +10,7 @@ use Psr\Log\LogLevel;
  *
  * Make sure that the log file is correctly generated.
  */
-class ImportLoggerTest extends \PHPUnit_Framework_TestCase
+class ImportLoggerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var NetscapeBookmarkParser instance
@@ -20,7 +20,7 @@ class ImportLoggerTest extends \PHPUnit_Framework_TestCase
     /**
      * Initialize test resources
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $this->parser = new NetscapeBookmarkParser();
     }
@@ -28,7 +28,7 @@ class ImportLoggerTest extends \PHPUnit_Framework_TestCase
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
         @unlink(LoggerTestsUtils::getLogFile('tmp'));

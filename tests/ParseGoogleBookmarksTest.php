@@ -7,12 +7,12 @@ namespace Shaarli\NetscapeBookmarkParser;
  *
  * The reference data has been dumped with Google Bookmarks on 2018-10-01
  */
-class ParseGoogleBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseGoogleBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

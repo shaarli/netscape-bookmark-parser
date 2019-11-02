@@ -7,12 +7,12 @@ namespace Shaarli\NetscapeBookmarkParser;
  *
  * The reference data has been dumped with Mozilla Firefox 46.0.1
  */
-class ParseFirefoxBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseFirefoxBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

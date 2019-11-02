@@ -7,12 +7,12 @@ namespace Shaarli\NetscapeBookmarkParser;
  *
  * The reference data has been dumped with Chromium 51.0.2704.84
  */
-class ParseChromiumBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseChromiumBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

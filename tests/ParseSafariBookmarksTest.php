@@ -5,12 +5,12 @@ namespace Shaarli\NetscapeBookmarkParser;
 /**
  * Ensure Safari exports are properly parsed
  */
-class ParseSafariBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseSafariBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }

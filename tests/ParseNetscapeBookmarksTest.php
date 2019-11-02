@@ -8,14 +8,14 @@ namespace Shaarli\NetscapeBookmarkParser;
  * @see https://msdn.microsoft.com/en-us/library/aa753582%28v=vs.85%29.aspx
  * @see http://www.w3schools.com/tags/tag_dl.asp
  */
-class ParseNetscapeBookmarksTest extends \PHPUnit_Framework_TestCase
+class ParseNetscapeBookmarksTest extends \PHPUnit\Framework\TestCase
 {
     protected $parser = null;
 
     /**
      * Initialize test resources
      */
-    public function setUp()
+    protected function setUp(): void
     {
         $this->parser = new NetscapeBookmarkParser(true, array(), 'error');
     }
@@ -23,7 +23,7 @@ class ParseNetscapeBookmarksTest extends \PHPUnit_Framework_TestCase
     /**
      * Delete log file.
      */
-    public function tearDown()
+    protected function tearDown(): void
     {
         @unlink(LoggerTestsUtils::getLogFile());
     }
