@@ -153,6 +153,14 @@ class NetscapeBookmarkParser implements LoggerAwareInterface
                     $this->logger->debug('[#' . $lineNumber . '] Empty URL');
                 }
 
+                if (preg_match('/icon="(.*?)"/i', $line, $icon)) {
+                    $item['icon'] = $icon[1];
+                    $this->logger->debug('[#' . $lineNumber . '] ICON found: ' . $href[1]);
+                } else {
+                    $item['icon'] = '';
+                    $this->logger->debug('[#' . $lineNumber . '] Empty ICON');
+                }
+
                 if (preg_match('/<a.*?[^br]>(.*?)<\/a>/i', $line, $title)) {
                     $item['title'] = $title[1];
                     $this->logger->debug('[#' . $lineNumber . '] Title found: ' . $title[1]);
@@ -163,7 +171,9 @@ class NetscapeBookmarkParser implements LoggerAwareInterface
 
                 if (preg_match('/(description|note)="(.*?)"/i', $line, $description)) {
                     $item['note'] = $description[2];
-                    $this->logger->debug('[#' . $lineNumber . '] Content found: ' . substr($description[2], 0, 50) . '...');
+                    $this->logger->debug(
+                        '[#' . $lineNumber . '] Content found: ' . substr($description[2], 0, 50) . '...'
+                    );
                 } elseif (preg_match('/<dd>(.*?)$/i', $line, $note)) {
                     $item['note'] = str_replace('<br>', "\n", $note[1]);
                     $this->logger->debug('[#' . $lineNumber . '] Content found: ' . substr($note[1], 0, 50) . '...');

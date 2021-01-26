@@ -208,7 +208,8 @@ class ParseShaarliBookmarksTest extends TestCase
                 'note' => 'simple on/off button',
                 'tags' => ['css'],
                 'time' => 1470640652,
-                'pub' => 0
+                'pub' => 0,
+                'icon' => ''
             ],
             $bkm[0]
         );
@@ -221,7 +222,8 @@ class ParseShaarliBookmarksTest extends TestCase
                 'note' => '',
                 'tags' => ['apache'],
                 'time' => 1469950052,
-                'pub' => 1
+                'pub' => 1,
+                'icon' => ''
             ],
             $bkm[1]
         );

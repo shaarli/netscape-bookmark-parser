@@ -19,6 +19,17 @@ class ParseChromiumBookmarksTest extends TestCase
         @unlink(LoggerTestsUtils::getLogFile());
     }
 
+    public function testParseChromiumBookmarkShouldIncludeIcon()
+    {
+        $parser = new NetscapeBookmarkParser(false, null, '1');
+        $bkm = $parser->parseFile('tests/input/chromium_flat.htm');
+        $this->assertEquals('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeElEQVQ4jX1TW0hUURRd+8yZuaPOdQxNiSiipAdjICISNhBFVIIRiBoYRP9BSSBFBXPnoyj666O+AoOEmMmpNBUKHSQRiTCDKYqeX6KBzuOa4zzu2X3M+NbW1zn77LX3WntzgI1gsFh1Z6Z1sTzkuggzgUgBAB4nSt1SqThRFADn33jzAvmEPU/jDXA6L1E6tUMxVFn3wg9rIen/TTSxtgitIAsQqf2BeBsT34bNfnlfeeFQZDIqSMhWCe7IZLjt51f3eM5mXiUAoIVtee/yYCgeORCarVrrbG9g5mxVKBbeYE5MAFD9PFpS22c+rHkZ688lhJftBXIN6nvjX04MzXVUPpkpXrQsAOL6vsQFTWLEoWkuAXULzAQML0tsJQsA0hbfTMBRXVpMo95XsRYQMR0eiDaRwh3Fsmm0UY9sspVVkz/UG6uRQnURc7vUiK6RxMXBk3oEYZYY9qvKunP27++6MjAMBSL2BNjx6TOyeb4YO03jx15Hr5OiG9QwGP0l55Oe3sZtSfj9BMNQx9/Mep02WafY6ibBuhDijFOlHwWPlk8BTDD85K1td+savxd2sJovcBW0BIMCPh8DTFn5cYyt9IAg4UGWt3Mi2xkcfvBnkWz4fCgpyBZKwRlqHoq+gA0Tz45sMdb5/w+aw7P3FKOC2t7GdrNl9ZBAyGXZ7yfT88lpAG6HoFSCCADcu8rU9NQ0KgDAVVRkqcwVZpxKWdxIAHB+ZHKnUtpdaYOHhC3DSoFZ5UZPAEGAAGYiAitpKf4gNefVzjrXFK1cU0P/t+KS8gqHjjmYJqDrLphmTrKuAyaAvwupVI93q7m04qXDJt91QzCLRfI/LI8pZq5PEwYAAAAASUVORK5CYII=', $bkm[0]['icon']);
+
+        $parser = new NetscapeBookmarkParser(true, null, '1');
+        $bkm = $parser->parseFile('tests/input/chromium_nested.htm');
+        $this->assertEquals('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB2UlEQVQ4jYWTz2uScRzHXz5uQfp46i6uQ4QhQf4DgzpFPVtKlxmNrkG2npOSY1rgcX/ARoeCdliroHaJLYg8RoeQIDoEQqvUkqRNI/V5dzAft/mjL3zh++HL683788vzfI71Cye4jIeB87sNjsA3OfiHYPMjjzzKomFwowWL70+DMUHu5FvMI8NFjHFwemWbzOoWSx+i7P4ZIuABYxR8Y/kppmni8/m4ufxkpIhxGL724hjplW1CoSm+ff3Czs5ngsEgmdUtUu8iAyLGfth6COtvfpDP5/lerTI7e4kZa4ZKpUy73eLO/VeDTpRDexl0dgp1y4JM09SthQU3zmaX1Gg0JEmlUkl2PKpft5FyiObiQThgmioUCnIcR+lUSrZty3Ec1et1VStlNZtN1Wo12fGo9jLI6FXTdSThdDq9LrmnWCxy0bKo138iCfSv+24Kx/su/H6/riQSbpxMJhUIBAToVDgsO3ZGu70UlOs+Dov0biQSUaVcVjqVEqDpEC6sHPIo13faaIG1Bi8/uXPCxuMNYrE4tVqN6+fD3DtXxr9vKif299Q3Cc/m+iIC5q/O4/V6ef3g7gAMcMDBKCfTIdhMMAB3BcYsk7UGHWc0jMDzv3WW4OiYdf4LzLYa1HClursAAAAASUVORK5CYII=', $bkm[1]['icon']);
+    }
+
     /**
      * Parse flat Chromium bookmarks (no directories)
      */
