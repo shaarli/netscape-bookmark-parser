@@ -153,6 +153,14 @@ class NetscapeBookmarkParser implements LoggerAwareInterface
                     $this->logger->debug('[#' . $lineNumber . '] Empty URL');
                 }
 
+                if (preg_match('/icon="(.*?)"/i', $line, $icon)) {
+                    $item['icon'] = $icon[1];
+                    $this->logger->debug('[#' . $lineNumber . '] ICON found: ' . $href[1]);
+                } else {
+                    $item['icon'] = '';
+                    $this->logger->debug('[#' . $lineNumber . '] Empty ICON');
+                }
+
                 if (preg_match('/<a.*?[^br]>(.*?)<\/a>/i', $line, $title)) {
                     $item['title'] = $title[1];
                     $this->logger->debug('[#' . $lineNumber . '] Title found: ' . $title[1]);
