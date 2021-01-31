@@ -42,5 +42,3 @@ steps:
   - composer install --prefer-dist
   - make lint
   - make test
-
-...
