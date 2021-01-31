@@ -19,6 +19,6 @@ local Pipeline(version) = {
 };
 
 [
-    Pipeline(7.3),
-    Pipeline(7.4),
+    Pipeline('7.3'),
+    Pipeline('7.4'),
 ]
