@@ -1,8 +1,8 @@
+.phpunit.result.cache
 composer.lock
+coverage
 vendor
 !.gitkeep
-
-/logs/
 
 ###> squizlabs/php_codesniffer ###
 /.phpcs-cache
