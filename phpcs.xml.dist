@@ -1,5 +1,7 @@
-<?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP_CodeSniffer" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
 
     <!-- Documentation: https://github.com/squizlabs/PHP_CodeSniffer -->
 
@@ -8,8 +10,10 @@
     <arg name="colors"/>
     <arg name="extensions" value="php"/>
 
-    <file>NetscapeBookmarkParser.php</file>
-    <file>tests</file>
+    <file>src/</file>
+    <file>tests/</file>
+
+    <exclude-pattern>*/tests/Fixtures/*</exclude-pattern>
 
     <rule ref="PSR12" />
 

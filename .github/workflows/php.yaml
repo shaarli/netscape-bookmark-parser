@@ -1,0 +1,45 @@
+name: PHP CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  php:
+    name: PHP project (PHP ${{ matrix.php-versions }})
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php-versions: ['7.3', '7.4']
+
+    steps:
+      # Setup Github actions
+      # https://github.com/actions/checkout (official)
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup PHP
+      # https://github.com/shivammathur/setup-php (community)
+      - name: Setup PHP, extensions and composer with shivammathur/setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: composer
+
+      - name: Check PHP Version
+        run: php -v
+
+      - name: Install Project
+        run: make install
+
+      - name: Check for code quality errors
+        run: make lint
+
+      - name: Run Unit tests
+        run: make tests
